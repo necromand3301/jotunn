@@ -3,7 +3,7 @@ import os
 from dataclasses import dataclass
 import discord
 
-BOT_TOKEN = "MTEwNjkzOTYxNDI4MDgxODY4OA.GfC1CG.mAh8_0wnBn40WCNsOvJcU8aADD0jTfiCU0unHo"
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
@@ -282,6 +282,5 @@ async def color(interaction: discord.Interaction):
 
     await interaction.response.send_message("Choose color", view=my_view)
 
-BOT_TOKEN = "MTEwNjkzOTYxNDI4MDgxODY4OA.GfC1CG.mAh8_0wnBn40WCNsOvJcU8aADD0jTfiCU0unHo"
 bot.run(BOT_TOKEN)
 
